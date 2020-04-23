@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>1212</title>
+		<!--引入播放器样式-->
+		<link href="http://vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+		<!--引入播放器js-->
+		<script src="http://vjs.zencdn.net/5.19/video.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js">
+			<script type="text/javascript">
+    	
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   		});
+   		
+    </script>
+	</head>
+	<body>
+
+
+		<!-- <video width="300px" height="200px" controls>
+			<source src="https://play.live.jianongzhenghe.com/czy1/room1.m3u8?auth_key=1587537782-0-0-4edd84bffdca80012483933d0fbbd6f3"
+			 type="application/x-mpegURL">
+		</video> -->
+
+
+		<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+		<!-- Or if you want a more recent canary version -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+		<video id="video"></video>
+		<script>
+			var m3u8url =
+				'https://play.live.jianongzhenghe.com/czy1/room1.m3u8?auth_key=1587537083-0-0-1f03675cab6a98de9a1f7d9159f8fa33'
+				
+				m3u8url = 'https://play.live.jianongzhenghe.com/czy/room1.m3u8?auth_key=1587545012-0-0-877b69301ea4e48b4eee96bb2ed13f92'
+			var video = document.getElementById('video');
+			if (Hls.isSupported()) {
+				var hls = new Hls();
+				hls.loadSource(m3u8url);
+				hls.attachMedia(video);
+				hls.on(Hls.Events.MANIFEST_PARSED, function() {
+					video.play();
+				});
+			} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+				video.src = m3u8url;
+				video.addEventListener('loadedmetadata', function() {
+					video.play();
+				});
+			}
+			
+		</script>
+	</body>
+
+</html>
