@@ -28,14 +28,12 @@
 
 
 		<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-		<!-- Or if you want a more recent canary version -->
 		<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
 		<video id="video"></video>
 		<script>
-			var m3u8url =
-				'https://play.live.jianongzhenghe.com/czy1/room1.m3u8?auth_key=1587537083-0-0-1f03675cab6a98de9a1f7d9159f8fa33'
-				
-				m3u8url = 'https://play.live.jianongzhenghe.com/czy/room1.m3u8?auth_key=1587545012-0-0-877b69301ea4e48b4eee96bb2ed13f92'
+			var m3u8url = ''
+			m3u8url = 'https://play.live.jianongzhenghe.com/czy/room.m3u8?auth_key=1587693906-0-0-85f40088e959a5b5de74cb49f7633285'
+			
 			var video = document.getElementById('video');
 			if (Hls.isSupported()) {
 				var hls = new Hls();
